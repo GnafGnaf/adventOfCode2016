@@ -8,23 +8,23 @@ void main() {
   test('start is 0/0', () {
     var map = new StreetMap();
 
-    expect(map.position, equals(new Point<int>(0, 0)));
+    expect(map.currentPosition, equals(new Point<int>(0, 0)));
   });
 
   test('position changes as you move across the grid', () {
     var map = new StreetMap();
 
     map.move(CardinalDirection.north, 1);
-    expect(map.position, equals(new Point<int>(0, 1)));
+    expect(map.currentPosition, equals(new Point<int>(0, 1)));
 
     map.move(CardinalDirection.south, 1);
-    expect(map.position, equals(new Point<int>(0, 0)));
+    expect(map.currentPosition, equals(new Point<int>(0, 0)));
 
     map.move(CardinalDirection.east, 1);
-    expect(map.position, equals(new Point<int>(1, 0)));
+    expect(map.currentPosition, equals(new Point<int>(1, 0)));
 
     map.move(CardinalDirection.west, 1);
-    expect(map.position, equals(new Point<int>(0, 0)));
+    expect(map.currentPosition, equals(new Point<int>(0, 0)));
   });
 
   test('calculates distance to start point', () {

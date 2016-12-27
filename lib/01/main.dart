@@ -10,8 +10,8 @@ void main(List<String> directions) {
     map.move(compass.facingDirection, _extractDistance(direction));
   }
 
-  print("You will be ${map.position.y} blocks East "
-      "and ${map.position.x} blocks North, "
+  print("You will be ${map.currentPosition.y} blocks East "
+      "and ${map.currentPosition.x} blocks North, "
       "or ${map.distanceToStartPoint()} blocks away.");
 
   print("The first spot you visited twice is "
