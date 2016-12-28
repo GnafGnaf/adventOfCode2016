@@ -4,15 +4,15 @@ import 'package:adventofcode/02/keypad.dart';
 
 main() async {
   var output = '';
-  var keyPad = new KeyPad();
-  var file = new File('/home/gnafgnaf/WebstormProjects/adventofcode/lib/02/input.txt');
+  var keyPad = new KeyPad.standardKeyPad();
+  var file = new File('lib/02/input.txt');
   var lines = file.readAsLines();
 
   for(var line in await lines) {
     for (var direction in _parseLine(line)) {
       keyPad.moveFinger(direction);
     }
-    output += keyPad.currentNumber.toString();
+    output += keyPad.keyUnderFinger.value;
   }
 
   print(output);
