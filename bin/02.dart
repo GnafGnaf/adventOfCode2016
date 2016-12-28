@@ -8,7 +8,7 @@ main() async {
   var file = new File('lib/02/input.txt');
   var lines = file.readAsLines();
 
-  for(var line in await lines) {
+  for (var line in await lines) {
     for (var direction in _parseLine(line)) {
       keyPad.moveFinger(direction);
     }
@@ -40,4 +40,3 @@ List<Directions> _parseLine(String line) {
 
   return directions;
 }
-

@@ -47,7 +47,7 @@ class StreetMap {
   }
 
   bool _hasBeenVisitedMoreThanOnce(Point<int> position) {
-    return positionsVisited.indexOf(position)
-        != positionsVisited.lastIndexOf(position);
+    return positionsVisited.indexOf(position) !=
+        positionsVisited.lastIndexOf(position);
   }
 }

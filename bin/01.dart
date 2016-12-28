@@ -23,7 +23,7 @@ int _extractDistance(String direction) {
 }
 
 Side _extractSide(String direction) {
-  switch (direction.substring(0,1).toUpperCase()) {
+  switch (direction.substring(0, 1).toUpperCase()) {
     case 'L':
       return Side.left;
     case 'R':

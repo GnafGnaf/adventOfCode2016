@@ -25,6 +25,5 @@ main() {
 
     compass.turn(Side.left);
     expect(compass.facingDirection, equals(CardinalDirection.west));
-
   });
 }

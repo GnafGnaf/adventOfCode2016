@@ -1,11 +1,3 @@
-enum CardinalDirection {
-  north,
-  east,
-  south,
-  west
-}
+enum CardinalDirection { north, east, south, west }
 
-enum Side {
-  left,
-  right
-}
+enum Side { left, right }

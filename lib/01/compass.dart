@@ -25,7 +25,7 @@ class Compass {
     if (facingDirection == CardinalDirection.values.first) {
       facingDirection = CardinalDirection.values.last;
     } else {
-      facingDirection = CardinalDirection.values[facingDirection.index -1];
+      facingDirection = CardinalDirection.values[facingDirection.index - 1];
     }
   }
 }

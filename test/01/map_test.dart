@@ -1,4 +1,3 @@
-
 import 'dart:math';
 import 'package:adventofcode/01/enums.dart';
 import 'package:adventofcode/01/streetMap.dart';
