@@ -10,14 +10,10 @@ main() {
   for (var line in file.readAsLinesSync()) {
     var sides = line.trim().split(new RegExp(' +'));
 
-      if (triangleValidator.isSideLengthValid(
-          int.parse(sides[0]),
-          int.parse(sides[1]),
-          int.parse(sides[2]))
-      ) {
-        validTriangleCount++;
-      }
-
+    if (triangleValidator.isSideLengthValid(
+        int.parse(sides[0]), int.parse(sides[1]), int.parse(sides[2]))) {
+      validTriangleCount++;
+    }
   }
 
   print(validTriangleCount);

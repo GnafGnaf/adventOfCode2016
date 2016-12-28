@@ -3,6 +3,5 @@ class TriangleValidator {
     return sideA + sideB > sideC &&
         sideA + sideC > sideB &&
         sideB + sideC > sideA;
-
   }
 }

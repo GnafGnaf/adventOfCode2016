@@ -1,3 +1,3 @@
 # adventofcode
 
-A sample command-line application.
+Answers to the questions asked on http://adventofcode.com/2016
