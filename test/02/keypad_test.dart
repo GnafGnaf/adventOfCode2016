@@ -44,4 +44,34 @@ void main() {
 
     expect(keypad.keyUnderFinger.value, equals("9"));
   });
+
+  test('special KeyPad', () {
+    var keyPad = new KeyPad.specialKeyPad();
+
+    keyPad.moveFinger(Directions.up);
+    keyPad.moveFinger(Directions.left);
+    keyPad.moveFinger(Directions.left);
+    expect(keyPad.keyUnderFinger.value, equals("5"));
+
+    keyPad.moveFinger(Directions.right);
+    keyPad.moveFinger(Directions.right);
+    keyPad.moveFinger(Directions.down);
+    keyPad.moveFinger(Directions.down);
+    keyPad.moveFinger(Directions.down);
+    expect(keyPad.keyUnderFinger.value, equals("D"));
+
+    keyPad.moveFinger(Directions.left);
+    keyPad.moveFinger(Directions.up);
+    keyPad.moveFinger(Directions.right);
+    keyPad.moveFinger(Directions.down);
+    keyPad.moveFinger(Directions.left);
+    expect(keyPad.keyUnderFinger.value, equals("B"));
+
+    keyPad.moveFinger(Directions.up);
+    keyPad.moveFinger(Directions.up);
+    keyPad.moveFinger(Directions.up);
+    keyPad.moveFinger(Directions.up);
+    keyPad.moveFinger(Directions.down);
+    expect(keyPad.keyUnderFinger.value, equals("3"));
+  });
 }

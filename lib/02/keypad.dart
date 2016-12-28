@@ -28,6 +28,38 @@ class KeyPad {
     keyUnderFinger = key5;
   }
 
+  KeyPad.specialKeyPad() {
+    var key1 = new Key("1");
+    var key2 = new Key("2");
+    var key3 = new Key("3");
+    var key4 = new Key("4");
+    var key5 = new Key("5");
+    var key6 = new Key("6");
+    var key7 = new Key("7");
+    var key8 = new Key("8");
+    var key9 = new Key("9");
+    var keyA = new Key("A");
+    var keyB = new Key("B");
+    var keyC = new Key("C");
+    var keyD = new Key("D");
+
+    key1.connect(bottom: key3);
+    key2.connect(right: key3, bottom: key6);
+    key3.connect(top: key1, left: key2, right: key4, bottom: key7);
+    key4.connect(left: key3, bottom: key8);
+    key5.connect(right: key6);
+    key6.connect(top: key2, left: key5, right: key7, bottom: keyA);
+    key7.connect(top: key3, left: key6, right: key8, bottom: keyB);
+    key8.connect(top: key4, left: key7, right: key9, bottom: keyC);
+    key9.connect(left: key8);
+    keyA.connect(top: key6, right: keyB);
+    keyB.connect(top: key7, left: keyA, right: keyC, bottom: keyD);
+    keyC.connect(top: key8, left: keyB);
+    keyD.connect(top: keyB);
+
+    keyUnderFinger = key5;
+  }
+
   void moveFinger(Directions direction) {
     switch (direction) {
       case Directions.up:

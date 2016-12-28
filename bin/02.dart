@@ -4,7 +4,7 @@ import 'package:adventofcode/02/keypad.dart';
 
 main() async {
   var output = '';
-  var keyPad = new KeyPad.standardKeyPad();
+  var keyPad = new KeyPad.specialKeyPad();
   var file = new File('lib/02/input.txt');
   var lines = file.readAsLines();
 
