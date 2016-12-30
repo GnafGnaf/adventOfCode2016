@@ -18,17 +18,13 @@ class Room {
   int extractId(String descriptor) {
     return int.parse(descriptor.substring(
         descriptor.lastIndexOf(new RegExp('-')) + 1,
-        _checksumFormat.firstMatch(descriptor).start));
+        descriptor.indexOf(new RegExp(r'\['))));
   }
 
   String extractChecksum(String descriptor) {
     return descriptor.substring(
-        _checksumFormat.firstMatch(descriptor).start + 1,
-        _checksumFormat.firstMatch(descriptor).end - 1);
-  }
-
-  get _checksumFormat {
-    return new RegExp(r'\[\w{5}\]');
+        (new RegExp(r'\[\w{5}\]')).firstMatch(descriptor).start + 1,
+        (new RegExp(r'\[\w{5}\]')).firstMatch(descriptor).end - 1);
   }
 
   String _extractCode(String descriptor) {
@@ -64,7 +60,7 @@ class Room {
     return currentMostCommon;
   }
 
-  Map<String,int> _countChars() {
+  Map<String, int> _countChars() {
     var charCounts = new SplayTreeMap<String, int>();
     for (int i = 0; i < _code.length; i++) {
       charCounts.putIfAbsent(_code[i], () => 0);

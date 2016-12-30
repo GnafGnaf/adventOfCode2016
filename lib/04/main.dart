@@ -18,9 +18,7 @@ class Main {
       try {
         var room = new Room(roomDescriptor);
         idSum += room.id;
-      } catch (FormatException) {
-
-      }
+      } catch (FormatException) {}
     }
     return idSum;
   }
