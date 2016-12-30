@@ -31,12 +31,20 @@ class StreetMap {
   }
 
   int distanceToStartPoint() {
-    return currentPosition.x.abs() + currentPosition.y.abs();
+    return _taxicabDistance(currentPosition);
   }
 
-  int distanceToFirstDoubleVisit() {
-    return _firstDoubleVisit().x.abs() + _firstDoubleVisit().y.abs();
+  int distanceFromStartToFirstDoubleVisit() {
+    var firstDoubleVisit = _firstDoubleVisit();
+
+    if (firstDoubleVisit != null) {
+      return _taxicabDistance(firstDoubleVisit);
+    }
+
+    return null;
   }
+
+  int _taxicabDistance(Point position) => position.x.abs() + position.y.abs();
 
   Point _firstDoubleVisit() {
     for (var position in positionsVisited) {
@@ -44,6 +52,7 @@ class StreetMap {
         return position;
       }
     }
+    return null;
   }
 
   bool _hasBeenVisitedMoreThanOnce(Point<int> position) {

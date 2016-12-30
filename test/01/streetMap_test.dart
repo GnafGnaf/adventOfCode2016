@@ -43,6 +43,12 @@ void main() {
     map.move(CardinalDirection.west, 4);
     map.move(CardinalDirection.north, 8);
 
-    expect(map.distanceToFirstDoubleVisit(), equals(4));
+    expect(map.distanceFromStartToFirstDoubleVisit(), equals(4));
+  });
+
+  test('calculates distance first double visit -> no double visit', () {
+    var map = new StreetMap();
+
+    expect(map.distanceFromStartToFirstDoubleVisit(), equals(null));
   });
 }

@@ -30,12 +30,15 @@ List<List<int>> _parseLines(List<String> lines) {
         triangles.add([line1[2], line2[2], line3[2]]);
       }
     }
-  };
+  }
 
   return triangles;
 }
 
 List<String> _parseLine(String line) {
-  return line.trim().split(new RegExp(' +')).map((string) => int.parse(string))
+  return line
+      .trim()
+      .split(new RegExp(' +'))
+      .map((string) => int.parse(string))
       .toList();
 }

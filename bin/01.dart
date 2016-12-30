@@ -15,7 +15,7 @@ void main(List<String> directions) {
       "or ${map.distanceToStartPoint()} blocks away.");
 
   print("The first spot you visited twice is "
-      "${map.distanceToFirstDoubleVisit()} away");
+      "${map.distanceFromStartToFirstDoubleVisit()} away");
 }
 
 int _extractDistance(String direction) {
