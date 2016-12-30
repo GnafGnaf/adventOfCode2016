@@ -1,6 +1,6 @@
 import 'package:adventofcode/04/main.dart';
 
-main(String inputFilePath) {
-  var program = new Main(inputFilePath);
+main() {
+  var program = new Main('lib/04/input.txt');
   print(program.execute());
 }

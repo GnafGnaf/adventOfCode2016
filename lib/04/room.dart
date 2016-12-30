@@ -38,32 +38,33 @@ class Room {
   }
 
   void _validateChecksum() {
-
-
-    var mostCommonChars = _extractMostCommon();
-
-    if (_checksum != mostCommonChars) {
+    if (_checksum != _calculateChecksum()) {
       throw new FormatException();
     }
   }
 
-  _extractMostCommon() {
+  String _calculateChecksum() {
     var charCounts = _countChars();
     var checksum = '';
     for (var i = 0; i < 5; i++) {
-      var currentMostCommon = charCounts.keys.first;
-      charCounts.forEach((char, count) {
-        if (charCounts[currentMostCommon] < count) {
-          currentMostCommon = char;
-        }
-      });
+      var currentMostCommon = _extractMostCommon(charCounts);
       charCounts.remove(currentMostCommon);
       checksum += currentMostCommon;
     }
     return checksum;
   }
 
-  _countChars() {
+  String _extractMostCommon(charCounts) {
+    var currentMostCommon = charCounts.keys.first;
+    charCounts.forEach((char, count) {
+      if (charCounts[currentMostCommon] < count) {
+        currentMostCommon = char;
+      }
+    });
+    return currentMostCommon;
+  }
+
+  Map<String,int> _countChars() {
     var charCounts = new SplayTreeMap<String, int>();
     for (int i = 0; i < _code.length; i++) {
       charCounts.putIfAbsent(_code[i], () => 0);
